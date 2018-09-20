@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="https://fonts.googleapis.com/css?family=Nosifer|Pompiere" rel="stylesheet">
+		<link rel="stylesheet" href="css/font/stylesheet.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="picto/icone.png" />
+		<title>Hell's Kitchen</title>
+	</head>
+
+	<body>
+
+		<div class="container-fluid">
+
+			<!-- Cookie Banner -->
+			<div id="cookie">
+				<div>Les cookies assurent le bon fonctionnement de notre site. En poursuivant la navigation, vous acceptez l'utilisation des cookies.
+					<span id="cookieConsent">J'accepte</span>
+					<span data-toggle="modal" data-target="#cookieInfo">En savoir plus</span>
+	         		<span class="close">&times;</span>
+	        		</button>
+				</div>
+			</div>
+			<!-- #end Cookie Banner -->
+
+			<!-- Modal Window : Enter player name -->
+			<div class="modal fade" id="welcome" tabindex="-1" role="dialog" aria-labelledby="welcomeWindow" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-body d-flex flex-column justify-content-center align-items-center" id="welcomeWindow">
+							<h1>Hell's <br> Kitchen</h1>
+							<form>
+								<p>Entrez le nom des joueurs</p>
+								<div class="form-group">
+									<span id="toque1"><img src="picto/toque_pleine.png" class="img-fluid" alt="toque"></span>
+									<input type="text" id="player1" placeholder="Master Chef" minlength="1" maxlength="15" required 
+									data-toggle="tooltip" data-placement="right">	
+								</div>
+								<div class="form-group">
+									<span id="toque2"><img src="picto/toque_pleine.png" class="img-fluid" alt="toque"></span>
+									<input type="text" id="player2" placeholder="Chef Tuck" minlength="1" maxlength="15" required
+									data-toggle="tooltip" data-placement="right">
+								</div>
+								<div class="form-group">
+									<input type="submit" id="submit" value="Let's cook, fight & kill !">
+								</div>
+							</form>
+						</div>		
+					</div>
+				</div>
+			</div>
+			<!-- #end Modal Windo : Enter player name -->
+
+			<!-- Game -->
+			<div id="game">		
+				<div class="row">
+					<!-- Info players -->
+					<div class="col-md-4 col-12 order-md-1 order-3">
+						<div class="row d-flex justify-content-end align-items-center">
+							<div class="col-12 logo">
+								<img src="picto/doubleHachoir.png" class="img-fluid" alt="logo">
+							</div>				
+							<div class="col-12">
+								<div class="row">
+									<div class="col-md-12 col-sm-12">
+										<div class="card player01">
+											<h4 class="playerName">___</h4>
+											<p><span class="weapon">Fouet</span> // Attaque : <span class="strength">10</span></p>
+											<div class="life">
+												<div class="heart"><img src="picto/coeur3_blanc.png" class="img-fluid" alt="coeur"></div>
+												<div class="barreLife"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12">		
+										<div class="card player02">
+											<h4 class="playerName">___</h4>
+											<p><span class="weapon">Fouet</span> // Attaque : <span class="strength">10</span></p>
+											<div class="life">
+											<div class="heart"><img src="picto/coeur3_blanc.png" class="img-fluid" alt="coeur"></div>
+												<div class="barreLife"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Board -->
+					<div class="col-md-7 col-12 order-md-2 order-1 d-flex justify-content-center align-items-end">
+						<div id="container">
+						</div>
+					</div>
+					<!-- Controls -->
+					<div class="col-md-1 col-12 order-md-3 order-2 d-flex flex-md-column flex-row justify-content-around align-items-end" id="controls">
+						<div class="button d-flex justify-content-center align-items-center" id="timer"><span><span class="minute">00</span> : <span class="second">00</span><span></div>
+						<div class="button d-flex justify-content-center align-items-center" id="attack">Attaque</div>
+						<div class="button d-flex justify-content-center align-items-center" id="defense">Défense</div>
+						<div class="button d-flex justify-content-center align-items-center" id="rule" data-toggle="modal" data-target="#regles" >?</div>
+					</div>
+				</div>
+			</div>
+			<!-- #end Game -->
+
+			<!-- Modal window : rules -->
+			<div class="modal fade" id="regles" tabindex="-1" role="dialog" aria-labelledby="rulesGame" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>Règles du jeu</h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	         					<span aria-hidden="true">&times;</span>
+	        				</button>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-lg-8">
+									<h5>Le but</h5>
+									<p>Éliminer son adversaire au terme d’un unique et sanglant combat.</p>
+									<h5>Les règles</h5>
+									<p>Les joueurs jouent à tour de rôle. A chaque tour, le joueur peut se déplacer d’une à trois cases, horizontalement ou verticalement.<br>
+									Si les joueurs se croisent sur des cases adjacentes (horizontalement ou verticalement), un combat à mort s’engage.<br>Lors d'un combat, le fonctionnement du jeu est le suivant :</p>
+									<ul>
+										<li>Chacun attaque à son tour.</li>
+										<li>Les dégâts infligés dépendent de l’arme possédée par le joueur.</li>
+										<li>Le joueur peut choisir d’attaquer ou de se défendre contre le prochain coup.</li>
+										<li>Lorsque le joueur se défend, il encaisse 50% de dégâts en moins qu’en temps normal.</li>
+										<li>Dès que les points de vie d’un joueur (initialement à 100) tombent à 0 , celui-ci a perdu. La partie est terminée.</li>
+									</ul>	
+								</div>
+								<div class="col-lg-4">
+									<h5>Les armes</h5>
+									<div class="arme">
+										<div>
+											<img src="picto/fouet.png" class="img-fluid" alt="fouet">
+										</div>
+										<div>
+											<p>Fouet</p>
+											<p>Force : 10</p>
+										</div>
+									</div>
+									<div class="arme">
+										<div>
+											<img src="picto/rouleauPatisserie.png" class="img-fluid" alt="rouleau patisserie">
+										</div>
+										<div>
+											<p>Rouleau à pâtisserie</p>
+											<p>Force : 15</p>
+										</div>
+									</div>
+									<div class="arme">
+										<div>
+											<img src="picto/tireBouchon.png" class="img-fluid" alt="tire-bouchon">
+										</div>
+										<div>
+											<p>Tire-Bouchon</p>
+											<p>Force : 20</p>
+										</div>
+									</div>									
+									<div class="arme">
+										<div>
+											<img src="picto/office.png" class="img-fluid" alt="couteau office">
+										</div>
+										<div>
+											<p>Couteau d'office</p>
+											<p>Force : 25</p>
+										</div>
+									</div>
+									<div class="arme">
+										<div>
+											<img src="picto/hachoir.png" class="img-fluid" alt="couteau hachoir">
+										</div>
+										<div>
+											<p>Couteau hâchoir</p>
+											<p>Force : 35</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #end Modal window : rules -->
+
+			<!-- End of the game -->
+			<div class="modal fade" id="result" tabindex="-1" role="dialog" aria-labelledby="resultGame" aria-hidden="true" data-backdrop="static" data-keyboard="false">			
+				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">			
+					<div class="modal-content">	
+						<div class="modal-body d-flex flex-column justify-content-center align-items-center" id="resultGame">
+							<h1>Hell's <br>Kitchen</h1>
+							<p><span id="winner"></span> <span id="wayToKill"></span> <span id="looser"></span> en <span id="move"></span> déplacements et pas moins de <span id="offensive"></span> coups de <span id="weaponName"></span> ! Le combat des chefs, qui s'est tenu <span id="where"></span> entre carottes et betteraves rouges, n'a pas duré plus de <span id="minute"></span> minutes et <span id="second"></span> secondes ! Well done et longue vie aux oignons !</p>
+							<p>Voulez-vous rejouer ?</p>
+							<div id="replay" class="d-flex justify-content-center">
+								<div id="yes">Oui</div>
+								<div id="no">Non</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #end End of the game -->
+
+			<!-- Modal Window : Cookie Info -->
+			<div class="modal fade" id="cookieInfo" tabindex="-1" role="dialog" aria-labelledby="cookieInformation" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>En savoir plus sur les cookies</h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	         					<span aria-hidden="true">&times;</span>
+	        				</button>
+						</div>
+						<div class="modal-body" id="cookieInformation">
+							<h5>Qu’est-ce qu’un cookie ?</h5>
+							<p>Les cookies sont de petits fichiers texte déposés sur votre terminal de lecture (que ce soit votre ordinateur, tablette, smartphone ou encore console de jeux vidéo connectée à Internet) lors de la visite d'un site. Ils ont pour but de collecter des informations relatives à votre navigation afin de l'améliorer et de permettre certaines fonctionnalités. Les cookies sont gérés par votre navigateur internet.</p>
+
+							<h5>Pourquoi utilisons-nous des cookies ?</h5>
+							<p>Dans Hell's Kitchen, les cookies permettent d'enregistrer les pseudos de vos joueurs dans le cas où vous souhaiteriez relancer une partie au cours d'une même session.</p>
+
+							<h5>Comment accepter ou refuser les cookies ?</h5>
+							<p>La rubrique « Aide » des navigateurs vous indique comment paramétrer et désactiver les cookies.</p>
+							<p>Pour plus d'informations sur les cookies, vous pouvez visiter <a href="https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi" target="_blank">le site de la CNIL.</a></p>
+						</div>		
+					</div>
+				</div>
+			</div>
+			<!-- #end Modal Window : Cookie Info -->
+
+		</div>
+		<!-- #end -->
+
+		<!-- JS Files -->
+		<!-- Bootstrap -->
+		<script src="jquery/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- #end Bootstrap -->
+		<!-- Game -->
+   		<script src="js/random.js"></script>
+   		<script src="js/timer.js"></script>
+   		<script src="js/cell.js"></script>
+   		<script src="js/player.js"></script>
+   		<script src="js/weapon.js"></script>
+   		<script src="js/board.js"></script>
+   		<script src="js/game.js"></script>
+   		<script src="js/cookie.js"></script>
+   		<script src="js/fight.js"></script>
+   		<script src="js/play.js"></script>
+   		<!-- #end Game -->
+   		<!-- #end JS Files -->
+   		
+	</body>
+</html>
